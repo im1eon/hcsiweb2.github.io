@@ -495,12 +495,33 @@ a h4:hover {
   padding-left: 50px;
 }
 
+.list-styled-unsuojin {
+  padding-left: 25px;
+}
+
+
 .list-styled li {
   position: relative;
   margin-bottom: 20px;
 }
 
 .list-styled li::before {
+  position: absolute;
+  content: "";
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background: #191970;
+  left: -25px;
+  top: 5px;
+}
+
+.list-styled-unsuojin li {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.list-styled-unsuojin li::before {
   position: absolute;
   content: "";
   height: 10px;
