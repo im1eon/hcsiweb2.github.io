@@ -204,6 +204,37 @@
     map.enableKeyboard();//启用键盘上下左右键移动地图
   }
 
+  //定义设置中心位置控件类
+  function CenterControl(){
+    this.defaultAnchor = BMAP_ANCHOR_TOP_RIGHT;
+    this.defaultOffset = new BMap.Size(20, 20)
+  }
+  //通过JavaScript的prototype属性继承于BMap.Control
+  CenterControl.prototype = new BMap.Control();
+  //自定义控件必须实现自己的initialize方法，并且将控件的DOM元素返回
+  //在本方法中创建个div元素作为控件的容器，并将其添加到地图容器中
+  CenterControl.prototype.initialize = function(map){
+    //创建一个dom元素
+    var div = document.createElement('div');
+    //添加文字说明
+    div.appendChild(document.createTextNode('Find Us'));
+    // 设置样式
+    div.style.cursor = "pointer";
+    div.style.padding = "7px 10px";
+    div.style.boxShadow = "0 2px 6px 0 rgba(27, 142, 236, 0.5)";
+    div.style.borderRadius = "5px";
+    div.style.backgroundColor = "white";
+    // 绑定事件,点击设置中心
+    div.onclick = function(e){
+      var point = new BMap.Point(113.97460,22.59846);//定义一个中心点坐标
+      map.centerAndZoom(point,18);//设定地图的中心点和坐标并将地图显示在地图容器中
+    }
+    // 添加DOM元素到地图中
+    map.getContainer().appendChild(div);
+    // 将DOM元素返回
+    return div;
+  }
+        
   //地图控件添加函数：
   function addMapControl(){
     //向地图中添加缩放控件
@@ -215,10 +246,13 @@
     //向地图中添加比例尺控件
     var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
     map.addControl(ctrl_sca);
+    //向地图中添加中心位置控件
+    var ctrl_cnt = new CenterControl();
+    map.addControl(ctrl_cnt);
   }
 
   //标注点数组
-  var markerArr = [{title:"THUHCSI",content:"地址：广东省深圳市南山区西丽大学城清华校区信息大楼1701",point:"113.97460|22.59846",isOpen:1,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+  var markerArr = [{title:"清华大学人机语音交互实验室<br>(THUHCSI)",hint:"清华大学人机语音交互实验室\n(THUHCSI)",content:"地址：广东省深圳市南山区西丽大学城清华校区信息大楼1701",point:"113.97460|22.59846",isOpen:1,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
   ];
   //创建marker
   function addMarker(){
@@ -264,7 +298,7 @@
   //创建InfoWindow
   function createInfoWindow(i){
     var json = markerArr[i];
-    var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+    var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.hint + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
     return iw;
   }
   //创建一个Icon
