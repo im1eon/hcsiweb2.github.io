@@ -129,32 +129,87 @@
 <!-- papers -->
 <section class="section">
   <div class="container">
+    <!-- paper category navigation bar -->
     <div class="row">
       <div class="col-12">
-        <!-- paper category list -->
-        <ul class="list-inline text-center filter-controls mb-5">
-          <li class="list-inline-item m-3 active" data-filter="all">All</li>
-          <li class="list-inline-item m-3" data-filter="2022">2022</li>
-          <li class="list-inline-item m-3" data-filter="2021">2021</li>
-          <li class="list-inline-item m-3" data-filter="2020">2020</li>
-          <li class="list-inline-item m-3" data-filter="2019">2019</li>
-          <li class="list-inline-item m-3" data-filter="2018">2018</li>
-          <li class="list-inline-item m-3" data-filter="2017">2017</li>
-          <li class="list-inline-item m-3" data-filter="2016">2016</li>
-          <li class="list-inline-item m-3" data-filter="2015">2015</li>
-          <li class="list-inline-item m-3" data-filter="2014">2014</li>
-          <li class="list-inline-item m-3" data-filter="2013">2013</li>
-          <li class="list-inline-item m-3" data-filter="2012">2012</li>
-          <li class="list-inline-item m-3" data-filter="2011">2011</li>
-          <li class="list-inline-item m-3" data-filter="2010">2010</li>
-          <li class="list-inline-item m-3" data-filter="2009">2009</li>
-        </ul>
+        <!-- nav tab -->
+        <div class="border-bottom">
+          <ul class="nav nav-pills text-center">
+            <li class="nav-item">
+              <a class="nav-link active" href="#year" data-toggle="pill">
+                  by year
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#area" data-toggle="pill">
+                  by area
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#cat" data-toggle="pill">
+                  by category
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- nav tab content -->
+        <div class="tab-content" id="pills-tabContent">
+          <div class="tab-pane fade show active" id="year">
+            <div class="col-12">
+              <div class="mb-3"></div>
+              <!-- paper category list -->
+              <ul class="list-inline text-center filter-controls mb-3">
+                <li class="list-inline-item px-2 mb-3 active" data-filter="all">All</li>
+                <li class="list-inline-item px-2 mb-3" data-filter="2022">2022</li>
+                <li class="list-inline-item px-2 mb-3" data-filter="2021">2021</li>
+                <li class="list-inline-item px-2 mb-3" data-filter="2020">2020</li>
+                <li class="list-inline-item px-2 mb-3" data-filter="2019">2019</li>
+                <li class="list-inline-item px-2 mb-3" data-filter="2018">2018</li>
+                <li class="list-inline-item px-2 mb-3" data-filter="2017">2017</li>
+                <li class="list-inline-item px-2 mb-3" data-filter="2016">2016</li>
+                <li class="list-inline-item px-2 mb-3" data-filter="2015">2015</li>
+                <li class="list-inline-item px-2 mb-3" data-filter="2014">2014</li>
+                <li class="list-inline-item px-2 mb-3" data-filter="2013">2013</li>
+                <li class="list-inline-item px-2 mb-3" data-filter="2012">2012</li>
+                <li class="list-inline-item px-2 mb-3" data-filter="2011">2011</li>
+                <li class="list-inline-item px-2 mb-3" data-filter="2010">2010</li>
+                <li class="list-inline-item px-2 mb-3" data-filter="2009">2009</li>
+              </ul>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="area">
+            <div class="col-12">
+              <div class="mb-3"></div>
+              <!-- paper category list -->
+              <ul class="list-inline text-center filter-controls mb-3">
+                <li class="list-inline-item px-2 mb-3 active" data-filter="all">All</li>
+                <li class="list-inline-item px-2 mb-3" data-filter="ss">Speech Synthesis</li>
+                <li class="list-inline-item px-2 mb-3" data-filter="sr">Speech Recognition</li>
+                <li class="list-inline-item px-2 mb-3" data-filter="sv">Speaker Recognition</li>
+                <li class="list-inline-item px-2 mb-3" data-filter="ssp">Speech Signal Processing</li>
+                <li class="list-inline-item px-2 mb-3" data-filter="ac">Affective Computing</li>
+                <li class="list-inline-item px-2 mb-3" data-filter="mslp">Multimodal Speech and Language Processing</li>
+              </ul>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="cat">
+            <div class="col-12">
+              <div class="mb-3"></div>
+              <!-- paper category list -->
+              <ul class="list-inline text-center filter-controls mb-3">
+                <li class="list-inline-item px-2 mb-3 active" data-filter="all">All</li>
+                <li class="list-inline-item px-2 mb-3" data-filter="jnl">Journal</li>
+                <li class="list-inline-item px-2 mb-3"  data-filter="cf">Conference</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <!-- papers list -->
-    <div class="row filtr-container">
+    <div class="filtr-container">
       <!-- paper -->
-      <div data-category="2021" class="col-12 filtr-item">
+      <div data-category="2021,jnl,ac" class="col-12 filtr-item">
         <div class="card border-0 rounded-0 hover-shadow bg-gray p-2 mb-2">
           <div class="text-dark">
             Xixin WU, Yuewen CAO, Hui LU, Songxiang LIU, Disong WANG, Zhiyong WU, Xunying LIU, Helen MENG,
@@ -171,7 +226,7 @@
         </div>
       </div>
       <!-- paper -->
-      <div data-category="2021" class="col-12 filtr-item">
+      <div data-category="2021,jnl,ss,ac" class="col-12 filtr-item">
         <div class="card border-0 rounded-0 hover-shadow bg-gray p-2 mb-2">
           <div class="text-dark">
             Xixin WU, Yuewen CAO, Hui LU, Songxiang LIU, Shiyin KANG, Zhiyong WU, Xunying LIU, Helen MENG,
@@ -188,7 +243,7 @@
         </div>
       </div>
       <!-- paper -->
-      <div data-category="2021" class="col-12 filtr-item">
+      <div data-category="2021,cf,mslp" class="col-12 filtr-item">
         <div class="card border-0 rounded-0 hover-shadow bg-gray p-2 mb-2">
           <div class="text-dark">
             Yingmei GUO, Linjun SHOU, Jian PEI, Ming GONG, Mingxing XU, Zhiyong WU and Daxin JIANG,
@@ -205,7 +260,7 @@
         </div>
       </div>
       <!-- paper -->
-      <div data-category="2021" class="col-12 filtr-item">
+      <div data-category="2021,cf,ss" class="col-12 filtr-item">
         <div class="card border-0 rounded-0 hover-shadow bg-gray p-2 mb-2">
           <div class="text-dark">
             Yaohua BU, Tianyi MA, Weijun LI, Hang ZHOU, Jia JIA, Shengqi CHEN, Kaiyuan XU, Dachuan SHI, Haozhe WU, Zhihan YANG, Kun LI, Zhiyong WU,
@@ -222,7 +277,7 @@
         </div>
       </div>
       <!-- paper -->
-      <div data-category="2021" class="col-12 filtr-item">
+      <div data-category="2021,cf,ac" class="col-12 filtr-item">
         <div class="card border-0 rounded-0 hover-shadow bg-gray p-2 mb-2">
           <div class="text-dark">
             Suping ZHOU, Jia JIA, Zhiyong WU, Zhihan YANG, Yanfeng WANG, Wei CHEN, Fanbo MENG, Shuo HUANG, Jialie SHEN, Xiaochuan WANG,
@@ -239,7 +294,7 @@
         </div>
       </div>
       <!-- paper -->
-      <div data-category="2019" class="col-12 filtr-item">
+      <div data-category="2019,cf,ac,mslp" class="col-12 filtr-item">
         <div class="card border-0 rounded-0 hover-shadow bg-gray p-2 mb-2">
           <div class="text-dark">
             Runnan LI, Zhiyong WU, Jia JIA, Yaohua BU, Sheng ZHAO, Helen MENG,
@@ -256,7 +311,7 @@
         </div>
       </div>
       <!-- paper -->
-      <div data-category="2019" class="col-12 filtr-item">
+      <div data-category="2019,jnl,ss" class="col-12 filtr-item">
         <div class="card border-0 rounded-0 hover-shadow bg-gray p-2 mb-2">
           <div class="text-dark">
             Yishuang NING, Sheng HE, Zhiyong WU, Chunxiao XING, Liangjie ZHANG,
@@ -273,7 +328,7 @@
         </div>
       </div>
       <!-- paper -->
-      <div data-category="2018" class="col-12 filtr-item">
+      <div data-category="2018,cf,ac,mslp" class="col-12 filtr-item">
         <div class="card border-0 rounded-0 hover-shadow bg-gray p-2 mb-2">
           <div class="text-dark">
             Runnan LI, Zhiyong WU, Jia JIA, Jingbei LI, Wei CHEN, Helen MENG,
@@ -290,7 +345,7 @@
         </div>
       </div>
       <!-- paper -->
-      <div data-category="2018" class="col-12 filtr-item">
+      <div data-category="2018,jnl,sr" class="col-12 filtr-item">
         <div class="card border-0 rounded-0 hover-shadow bg-gray p-2 mb-2">
           <div class="text-dark">
             Kun LI, Shaoguang MAO, Xu LI, Zhiyong WU, Helen MENG,
@@ -307,7 +362,7 @@
         </div>
       </div>
       <!-- paper -->
-      <div data-category="2017" class="col-12 filtr-item">
+      <div data-category="2017,cf,ac,mslp" class="col-12 filtr-item">
         <div class="card border-0 rounded-0 hover-shadow bg-gray p-2 mb-2">
           <div class="text-dark">
             Yishuang NING, Jia JIA, Zhiyong WU, Runnan LI, Yongsheng AN, Yanfeng WANG, Helen MENG,
@@ -324,7 +379,7 @@
         </div>
       </div>
       <!-- paper -->
-      <div data-category="2015" class="col-12 filtr-item">
+      <div data-category="2015,jnl,ss" class="col-12 filtr-item">
         <div class="card border-0 rounded-0 hover-shadow bg-gray p-2 mb-2">
           <div class="text-dark">
             Zhiyong WU, Yishuang NING, Xiao ZANG, Jia JIA, Fanbo MENG, Helen MENG, Lianhong CAI,
@@ -341,7 +396,7 @@
         </div>
       </div>
       <!-- paper -->
-      <div data-category="2015" class="col-12 filtr-item">
+      <div data-category="2015,jnl,ss" class="col-12 filtr-item">
         <div class="card border-0 rounded-0 hover-shadow bg-gray p-2 mb-2">
           <div class="text-dark">
             Zhiyong WU, Kai ZHAO, Xixin WU, Xinyu LAN, Helen MENG,
@@ -358,7 +413,7 @@
         </div>
       </div>
       <!-- paper -->
-      <div data-category="2015" class="col-12 filtr-item">
+      <div data-category="2015,cf,ss,mslp" class="col-12 filtr-item">
         <div class="card border-0 rounded-0 hover-shadow bg-gray p-2 mb-2">
           <div class="text-dark">
             Qi LYU, Zhiyong WU, Jun ZHU,
@@ -375,7 +430,7 @@
         </div>
       </div>
       <!-- paper -->
-      <div data-category="2015" class="col-12 filtr-item">
+      <div data-category="2015,cf,ss,mslp" class="col-12 filtr-item">
         <div class="card border-0 rounded-0 hover-shadow bg-gray p-2 mb-2">
           <div class="text-dark">
             Qi LYU, Zhiyong WU, Jun ZHU, Helen MENG,
@@ -392,7 +447,7 @@
         </div>
       </div>
       <!-- paper -->
-      <div data-category="2014" class="col-12 filtr-item">
+      <div data-category="2014,jnl,ss" class="col-12 filtr-item">
         <div class="card border-0 rounded-0 hover-shadow bg-gray p-2 mb-2">
           <div class="text-dark">
             Fanbo MENG, Zhiyong WU, Jia JIA, Helen MENG, Lianhong CAI,
@@ -409,7 +464,7 @@
         </div>
       </div>
       <!-- paper -->
-      <div data-category="2014" class="col-12 filtr-item">
+      <div data-category="2014,jnl,ss,mslp" class="col-12 filtr-item">
         <div class="card border-0 rounded-0 hover-shadow bg-gray p-2 mb-2">
           <div class="text-dark">
             Jia JIA, Zhiyong WU, Shen ZHANG, Helen MENG, Lianhong CAI,
@@ -426,7 +481,7 @@
         </div>
       </div>
       <!-- paper -->
-      <div data-category="2009" class="col-12 filtr-item">
+      <div data-category="2009,jnl,ac,ss" class="col-12 filtr-item">
         <div class="card border-0 rounded-0 hover-shadow bg-gray p-2 mb-2">
           <div class="text-dark">
             Zhiyong WU, Helen M. MENG, Hongwu YANG, Lianhong CAI,
