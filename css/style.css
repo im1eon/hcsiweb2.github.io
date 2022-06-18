@@ -625,6 +625,36 @@ textarea.form-control {
           transform-origin: bottom;
 }
 
+
+.navi-item {
+  margin: 0 15px;
+  position: relative;
+}
+
+.navi-item .nav-link {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.navi-item::before {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 6px;
+  width: 100%;
+  content: "";
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.3s ease;
+  pointer-events: none;
+}
+
+.navi-item:hover::before, .navi-item.active::before {
+  transform: scaleY(1);
+  transform-origin: bottom;
+}
+
+
 .navbar-dark .navbar-nav .nav-link {
   color: #fff;
 }
