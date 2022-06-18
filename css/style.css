@@ -301,6 +301,10 @@ a.text-light:hover {
   color: #87CEFA !important;
 }
 
+a.text-white:hover {
+  color: #87CEFA !important;
+}
+
 h4 {
   transition: .2s ease;
 }
@@ -395,6 +399,9 @@ a h4:hover {
 
 .text-lightblue {
   color: #87CEFA !important;
+}
+.text-white {
+  color: #fff !important;
 }
 
 
