@@ -59,6 +59,22 @@ h2, .h2 {
   }
 }
 
+.header-top{
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+@media (max-width: 991px) {
+  .header-top{
+    z-index: 9999;
+    position: relative;
+    top: 0;
+    width: 100%;
+  }
+}
+
 h3, .h3 {
   font-size: 25px;
 }
